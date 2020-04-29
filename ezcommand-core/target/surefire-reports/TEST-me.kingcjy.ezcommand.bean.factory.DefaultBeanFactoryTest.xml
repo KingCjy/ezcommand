@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="0" name="me.kingcjy.ezcommand.bean.factory.DefaultBeanFactoryTest" time="0.003" errors="0" skipped="0">
+<testsuite tests="2" failures="0" name="me.kingcjy.ezcommand.bean.factory.DefaultBeanFactoryTest" time="0.008" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11.0.2+9"/>
@@ -64,6 +64,6 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="me.kingcjy.ezcommand.bean.factory.DefaultBeanFactoryTest" name="필드_인젝션_테스트" time="0"/>
-  <testcase classname="me.kingcjy.ezcommand.bean.factory.DefaultBeanFactoryTest" name="생성자_인젝션_테스트" time="0.003"/>
+  <testcase classname="me.kingcjy.ezcommand.bean.factory.DefaultBeanFactoryTest" name="필드_인젝션_테스트" time="0.006"/>
+  <testcase classname="me.kingcjy.ezcommand.bean.factory.DefaultBeanFactoryTest" name="생성자_인젝션_테스트" time="0.002"/>
 </testsuite>

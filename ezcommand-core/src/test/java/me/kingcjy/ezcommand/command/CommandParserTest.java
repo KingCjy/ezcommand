@@ -22,10 +22,10 @@ public class CommandParserTest {
         commandTypeDefinitionComposite.addCommandTypeDefinition(new PlayerTypeDefinition());
         commandTypeDefinitionComposite.addCommandTypeDefinition(new StringTypeDefinition());
 
-//        CommandParser commandParser = new CommandParser(commandTypeDefinitionComposite, "teleport <playerName> <Location:location>");
-        CommandParser commandParser = new CommandParser(commandTypeDefinitionComposite, "message <Player:player> <message>");
-//        Assert.assertTrue(commandParser.matches("teleport KingCjy 2 0 0"));
-        Assert.assertTrue(commandParser.matches("teleport KingCjy hi"));
+        CommandParser commandParser = new CommandParser(commandTypeDefinitionComposite, "teleport <playerName> <Location:location>");
+//        CommandParser commandParser = new CommandParser(commandTypeDefinitionComposite, "message <Player:player> <message>");
+        Assert.assertTrue(commandParser.matches("teleport KingCjy 2 0 0"));
+//        Assert.assertTrue(commandParser.matches("teleport KingCjy hi"));
     }
 
     @Test

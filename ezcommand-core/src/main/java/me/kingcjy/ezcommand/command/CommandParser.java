@@ -11,12 +11,19 @@ public class CommandParser {
 
     private CommandTypeDefinitionComposite commandTypeDefinitionComposite;
 
-    private Pattern CommandPattern;
+    private Pattern commandPattern;
 
     private Map<String, List<String>> typeNameMap = new HashMap<>();
     private Set<String> names = new HashSet<>();
 
+    private String command;
+
     public CommandParser(CommandTypeDefinitionComposite commandTypeDefinitionComposite, String command) {
+        this.commandTypeDefinitionComposite = commandTypeDefinitionComposite;
+        this.command = command;
+    }
+
+    public void initialize() {
         this.commandTypeDefinitionComposite = commandTypeDefinitionComposite;
 
         String regex = command;
@@ -51,22 +58,30 @@ public class CommandParser {
         }
 
         regex+="$";
-        CommandPattern = Pattern.compile(regex);
+        commandPattern = Pattern.compile(regex);
     }
 
     public boolean matches(String command) {
-        Matcher matcher = CommandPattern.matcher(command);
+        if(commandPattern == null) {
+            initialize();
+        }
+
+        Matcher matcher = commandPattern.matcher(command);
         return matcher.find();
     }
 
     public <T> T trasform(CommandArgument commandArgument, String name, Class<T> type) {
+        if(commandPattern == null) {
+            initialize();
+        }
+
         String typeString = commandTypeDefinitionComposite.getTypeString(type);
 
         if(typeNameMap.getOrDefault(typeString, new ArrayList<>()).contains(name) == false) {
             return null;
         }
 
-        Matcher matcher = CommandPattern.matcher(commandArgument.getFullCommand());
+        Matcher matcher = commandPattern.matcher(commandArgument.getFullCommand());
 
         if(matcher.find() == false) {
             return null;

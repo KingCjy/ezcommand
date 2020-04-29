@@ -1,9 +1,13 @@
-/Users/kingcjy/git/ezcommand/ezcommand-core/src/test/java/me/kingcjy/ezcommand/command/definition/CommandTypeDefinitionCompositeTest.java
 /Users/kingcjy/git/ezcommand/ezcommand-core/src/test/java/me/kingcjy/ezcommand/command/resolver/support/PathVariableHandlerMethodArgumentResolverTest.java
 /Users/kingcjy/git/ezcommand/ezcommand-core/src/test/java/me/kingcjy/ezcommand/bean/factory/DefaultBeanFactoryTest.java
 /Users/kingcjy/git/ezcommand/ezcommand-core/src/test/java/me/kingcjy/ezcommand/command/MapReferenceTest.java
 /Users/kingcjy/git/ezcommand/ezcommand-core/src/test/java/me/kingcjy/ezcommand/command/definition/support/LocationTypeDefinitionTest.java
-/Users/kingcjy/git/ezcommand/ezcommand-core/src/test/java/me/kingcjy/ezcommand/command/CommandParserTest.java
+/Users/kingcjy/git/ezcommand/ezcommand-core/src/test/java/me/kingcjy/ezcommand/utils/EzReflectionUtilsTest.java
+/Users/kingcjy/git/ezcommand/ezcommand-core/src/test/java/me/kingcjy/ezcommand/context/EzApplicationContextTest.java
+/Users/kingcjy/git/ezcommand/ezcommand-core/src/test/java/me/kingcjy/ezcommand/utils/BeanUtilsTest.java
 /Users/kingcjy/git/ezcommand/ezcommand-core/src/test/java/me/kingcjy/ezcommand/command/definition/support/StringTypeDefinitionTest.java
 /Users/kingcjy/git/ezcommand/ezcommand-core/src/test/java/me/kingcjy/ezcommand/bean/definition/ClassBeanDefinitionTest.java
 /Users/kingcjy/git/ezcommand/ezcommand-core/src/test/java/me/kingcjy/ezcommand/bean/definition/MethodBeanDefinitionTest.java
+/Users/kingcjy/git/ezcommand/ezcommand-core/src/test/java/me/kingcjy/ezcommand/command/definition/CommandTypeDefinitionCompositeTest.java
+/Users/kingcjy/git/ezcommand/ezcommand-core/src/test/java/me/kingcjy/ezcommand/command/CommandParserTest.java
+/Users/kingcjy/git/ezcommand/ezcommand-core/src/test/java/me/kingcjy/ezcommand/RegexTest.java

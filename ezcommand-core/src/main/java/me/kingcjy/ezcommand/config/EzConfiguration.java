@@ -25,4 +25,8 @@ public class EzConfiguration {
         CommandTypeDefinitionComposite commandTypeDefinitionComposite = new CommandTypeDefinitionComposite();
         return commandTypeDefinitionComposite;
     }
+    @Bean
+    public HandlerMethodArgumentResolverComposite handlerMethodArgumentResolverComposite() {
+        return new HandlerMethodArgumentResolverComposite();
+    }
 }

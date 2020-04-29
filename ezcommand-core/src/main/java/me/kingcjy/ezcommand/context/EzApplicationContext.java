@@ -52,7 +52,7 @@ public class EzApplicationContext implements ApplicationContext {
         commandTypeDefinitionComposite.addCommandTypeDefinitions(commandTypeDefinitions);
 
         Set<HandlerMethodArgumentResolver> handlerMethodArgumentResolvers = BeanUtils.findSubTypeOf(beanFactory, HandlerMethodArgumentResolver.class);
-        HandlerMethodArgumentResolverComposite handlerMethodArgumentResolverComposite = new HandlerMethodArgumentResolverComposite();
+        HandlerMethodArgumentResolverComposite handlerMethodArgumentResolverComposite = this.beanFactory.getBean(HandlerMethodArgumentResolverComposite.class);
         handlerMethodArgumentResolverComposite.addResolver(handlerMethodArgumentResolvers);
 
         HandlerMethodCreator handlerMethodCreator = new HandlerMethodCreatorComposite(beanFactory, handlerMethodArgumentResolverComposite);

@@ -3,6 +3,7 @@ package me.kingcjy.ezcommand.command.Handler;
 import me.kingcjy.ezcommand.annotations.CommandMapping;
 import me.kingcjy.ezcommand.annotations.Component;
 import me.kingcjy.ezcommand.command.definition.CommandTypeDefinitionComposite;
+import me.kingcjy.ezcommand.command.resolver.HandlerMethodArgumentResolverComposite;
 
 import java.lang.reflect.Method;
 import java.util.HashMap;
@@ -11,9 +12,11 @@ import java.util.Map;
 @Component
 public class DefaultHandlerMethodCreator implements HandlerMethodCreator {
 
+    private final HandlerMethodArgumentResolverComposite handlerMethodArgumentResolverComposite;
     private final CommandTypeDefinitionComposite commandTypeDefinitionComposite;
 
-    public DefaultHandlerMethodCreator(CommandTypeDefinitionComposite commandTypeDefinitionComposite) {
+    public DefaultHandlerMethodCreator(HandlerMethodArgumentResolverComposite handlerMethodArgumentResolverComposite, CommandTypeDefinitionComposite commandTypeDefinitionComposite) {
+        this.handlerMethodArgumentResolverComposite = handlerMethodArgumentResolverComposite;
         this.commandTypeDefinitionComposite = commandTypeDefinitionComposite;
     }
 
