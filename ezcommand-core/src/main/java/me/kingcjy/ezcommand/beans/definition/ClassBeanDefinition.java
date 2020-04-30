@@ -40,7 +40,7 @@ public class ClassBeanDefinition implements BeanDefinition {
 
             Object instance = constructor.newInstance(parameters);
             injectFields(beanDefinitionRegistry, instance);
-            logger.log(Level.INFO, "bean typed {0} created", getType().getName());
+            logger.log(Level.INFO, "[EzCommand] bean typed {0} created", getType().getName());
             return instance;
         } catch (InstantiationException e) {
             e.printStackTrace();
@@ -91,7 +91,6 @@ public class ClassBeanDefinition implements BeanDefinition {
 
     private Constructor getConstructor() throws NoSuchMethodException {
         Constructor[] constructors = beanClass.getConstructors();
-        System.out.println(beanClass.getName());
         if(constructors.length == 0) {
             return beanClass.getConstructor();
         }

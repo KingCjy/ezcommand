@@ -1,13 +1,16 @@
 package me.kingcjy.ezcommand.command.definition;
 
+import me.kingcjy.ezcommand.EzCommand;
 import me.kingcjy.ezcommand.command.CommandArgument;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class CommandTypeDefinitionComposite {
 
-//    private static final Logger logger = Bukkit.getLogger();
+    private static final Logger logger = EzCommand.getLogger(CommandTypeDefinitionComposite.class);
 
     private Set<CommandTypeDefinition> commandTypeDefinitions = new HashSet<>();
 
@@ -33,7 +36,7 @@ public class CommandTypeDefinitionComposite {
         CommandTypeDefinition commandTypeDefinition = getCommandTypeDefinition(type);
 
         if(commandTypeDefinition == null) {
-//            logger.log(Level.SEVERE, "ERROR CommandType {0} Not Supported", type);
+            logger.log(Level.SEVERE, "[EzCommand] ERROR CommandType {0} Not Supported", type);
             return "";
         }
 
@@ -44,7 +47,7 @@ public class CommandTypeDefinitionComposite {
         CommandTypeDefinition commandTypeDefinition = getCommandTypeDefinition(type);
 
         if(commandTypeDefinition == null) {
-//            logger.log(Level.SEVERE, "ERROR CommandType {0} Not Supported", type);
+            logger.log(Level.SEVERE, "[EzCommand] ERROR CommandType {0} Not Supported", type);
             return null;
         }
 

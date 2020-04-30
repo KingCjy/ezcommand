@@ -34,7 +34,7 @@ public class MethodBeanDefinition implements BeanDefinition {
         try {
             Object result = method.invoke(instance, parameters);
 
-            logger.log(Level.INFO, "bean typed {0} created", getType().getName());
+            logger.log(Level.INFO, "[EzCommand] bean typed {0} created", getType().getName());
             return result;
         } catch (IllegalAccessException e) {
             e.printStackTrace();

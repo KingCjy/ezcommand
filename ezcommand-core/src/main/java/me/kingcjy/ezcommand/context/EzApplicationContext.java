@@ -1,13 +1,14 @@
 package me.kingcjy.ezcommand.context;
 
+import Resource.ResourceLoader;
 import me.kingcjy.ezcommand.beans.factory.BeanFactory;
 import me.kingcjy.ezcommand.beans.factory.DefaultBeanFactory;
 import me.kingcjy.ezcommand.beans.scanner.AnnotationBeanDefinitionScanner;
 import me.kingcjy.ezcommand.beans.scanner.BeanDefinitionScanner;
 import me.kingcjy.ezcommand.beans.scanner.ClassPathBeanDefinitionScanner;
-import me.kingcjy.ezcommand.command.Handler.AnnotationCommandHandlerMapping;
-import me.kingcjy.ezcommand.command.Handler.HandlerMethodCreator;
-import me.kingcjy.ezcommand.command.Handler.HandlerMethodCreatorComposite;
+import me.kingcjy.ezcommand.command.handler.AnnotationCommandHandlerMapping;
+import me.kingcjy.ezcommand.command.handler.HandlerMethodCreator;
+import me.kingcjy.ezcommand.command.handler.HandlerMethodCreatorComposite;
 import me.kingcjy.ezcommand.command.definition.CommandTypeDefinition;
 import me.kingcjy.ezcommand.command.definition.CommandTypeDefinitionComposite;
 import me.kingcjy.ezcommand.command.executor.AnnocationCommandExecutor;
@@ -19,6 +20,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.time.LocalDateTime;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class EzApplicationContext implements ApplicationContext {
 
@@ -33,6 +35,11 @@ public class EzApplicationContext implements ApplicationContext {
     public EzApplicationContext(JavaPlugin javaPlugin) {
         this.javaPlugin = javaPlugin;
         this.startDateTime = LocalDateTime.now();
+
+        this.serverName = javaPlugin.getDescription().getName();
+        this.serverVersion = javaPlugin.getDescription().getVersion();
+
+        ResourceLoader.initialize(javaPlugin.getClass());
 
         String basePackage = javaPlugin.getClass().getPackage().getName();
 
@@ -52,10 +59,12 @@ public class EzApplicationContext implements ApplicationContext {
         commandTypeDefinitionComposite.addCommandTypeDefinitions(commandTypeDefinitions);
 
         Set<HandlerMethodArgumentResolver> handlerMethodArgumentResolvers = BeanUtils.findSubTypeOf(beanFactory, HandlerMethodArgumentResolver.class);
+        handlerMethodArgumentResolvers = handlerMethodArgumentResolvers.stream().filter(t -> !t.getClass().equals(HandlerMethodArgumentResolverComposite.class)).collect(Collectors.toSet());
+
         HandlerMethodArgumentResolverComposite handlerMethodArgumentResolverComposite = this.beanFactory.getBean(HandlerMethodArgumentResolverComposite.class);
         handlerMethodArgumentResolverComposite.addResolver(handlerMethodArgumentResolvers);
 
-        HandlerMethodCreator handlerMethodCreator = new HandlerMethodCreatorComposite(beanFactory, handlerMethodArgumentResolverComposite);
+        HandlerMethodCreator handlerMethodCreator = new HandlerMethodCreatorComposite(beanFactory);
 
         AnnotationCommandHandlerMapping annotationCommandHandlerMapping = new AnnotationCommandHandlerMapping(beanFactory, handlerMethodCreator);
         AnnocationCommandExecutor annocationCommandExecutor = new AnnocationCommandExecutor(annotationCommandHandlerMapping);

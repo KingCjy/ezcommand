@@ -11,6 +11,8 @@
     <modules>
         <module>ezcommand-core</module>
         <module>ezcommand-sample</module>
+        <module>ezcommand-minecraft</module>
+        <module>ezcommand-discord</module>
     </modules>
 
 

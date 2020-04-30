@@ -7,15 +7,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.logging.Logger;
 
-public class EzCommand extends JavaPlugin {
+public class EzCommand {
 
     public static Logger getLogger(Class<?> targetClass) {
 
         return Logger.getLogger(targetClass.getName());
-    }
-
-    @Override
-    public void onEnable() {
-        new EzApplicationContext(this);
     }
 }

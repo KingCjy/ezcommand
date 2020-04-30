@@ -1,7 +1,7 @@
 package me.kingcjy.ezcommand.command.registry;
 
-import me.kingcjy.ezcommand.command.Handler.CommandHandlerMapping;
-import me.kingcjy.ezcommand.command.Handler.HandlerKey;
+import me.kingcjy.ezcommand.command.handler.CommandHandlerMapping;
+import me.kingcjy.ezcommand.command.handler.HandlerKey;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandMap;

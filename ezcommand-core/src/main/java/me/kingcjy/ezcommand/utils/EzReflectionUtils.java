@@ -2,6 +2,7 @@ package me.kingcjy.ezcommand.utils;
 
 import org.reflections.Reflections;
 
+import javax.management.ReflectionException;
 import java.lang.annotation.Annotation;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -14,7 +15,7 @@ public class EzReflectionUtils {
 
     private static Reflections createReflections(String basePackage) {
         if(reflectionsCache.get(basePackage) == null) {
-            Reflections reflections = new Reflections(basePackage, "me.kingcjy.ezframework");
+            Reflections reflections = new Reflections(basePackage, "me.kingcjy.ezcommand");
             reflectionsCache.put(basePackage, reflections);
             return reflections;
         }
