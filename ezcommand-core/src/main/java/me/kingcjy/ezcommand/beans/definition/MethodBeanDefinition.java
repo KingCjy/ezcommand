@@ -1,6 +1,6 @@
 package me.kingcjy.ezcommand.beans.definition;
 
-import me.kingcjy.ezcommand.EzCommand;
+import me.kingcjy.ezcommand.EzLogger;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 
 public class MethodBeanDefinition implements BeanDefinition {
 
-    private static final Logger logger = EzCommand.getLogger(MethodBeanDefinition.class);
+    private static final Logger logger = EzLogger.getLogger(MethodBeanDefinition.class);
 
     private Class<?> beanClass;
     private Method method;

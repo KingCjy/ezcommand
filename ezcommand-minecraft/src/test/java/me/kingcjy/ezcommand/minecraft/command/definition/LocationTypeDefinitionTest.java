@@ -1,6 +1,7 @@
 package me.kingcjy.ezcommand.minecraft.command.definition;
 
-import me.kingcjy.ezcommand.command.CommandArgument;
+
+import me.kingcjy.ezcommand.minecraft.command.CommandArgument;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.entity.Player;

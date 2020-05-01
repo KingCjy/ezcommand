@@ -1,14 +1,14 @@
-package me.kingcjy.ezcommand.command;
+package me.kingcjy.ezcommand.minecraft.command;
 
+import me.kingcjy.ezcommand.command.RootCommandArgument;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 
-public class CommandArgument {
+public class CommandArgument extends RootCommandArgument {
     private CommandSender commandSender;
     private Command command;
     private String label;
     private String[] args;
-    private String fullCommand;
 
     public CommandArgument(CommandSender commandSender, Command command, String label, String[] args, String fullCommand) {
         this.commandSender = commandSender;

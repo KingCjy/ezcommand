@@ -1,7 +1,8 @@
 package me.kingcjy.ezcommand.command.definition.support;
 
+import me.kingcjy.ezcommand.command.RootCommandArgument;
 import me.kingcjy.ezcommand.command.definition.support.StringTypeDefinition;
-import me.kingcjy.ezcommand.command.CommandArgument;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -17,7 +18,7 @@ public class StringTypeDefinitionTest {
 
     @Test
     public void String_캐스팅_테스트() {
-        CommandArgument commandArgument = new CommandArgument(null, null, null, null, null);
+        RootCommandArgument commandArgument = new RootCommandArgument();
 
         String result = (String) stringTypeDefinition.transform(commandArgument, "1234");
 

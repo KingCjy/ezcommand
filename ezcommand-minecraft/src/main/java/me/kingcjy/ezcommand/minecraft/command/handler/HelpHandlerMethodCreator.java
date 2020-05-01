@@ -1,7 +1,7 @@
 package me.kingcjy.ezcommand.minecraft.command.handler;
 
-import Resource.ResourceLoader;
-import me.kingcjy.ezcommand.EzCommand;
+import resource.ResourceLoader;
+import me.kingcjy.ezcommand.EzLogger;
 import me.kingcjy.ezcommand.annotations.CommandMapping;
 import me.kingcjy.ezcommand.annotations.Component;
 import me.kingcjy.ezcommand.minecraft.annotations.GenerateHelpCommand;
@@ -21,7 +21,7 @@ import java.util.logging.Logger;
 @Component
 public class HelpHandlerMethodCreator implements HandlerMethodCreator {
 
-    private Logger logger = EzCommand.getLogger(DefaultHandlerMethodCreator.class);
+    private Logger logger = EzLogger.getLogger(DefaultHandlerMethodCreator.class);
 
     private final HandlerMethodArgumentResolverComposite handlerMethodArgumentResolverComposite;
     private final CommandTypeDefinitionComposite commandTypeDefinitionComposite;

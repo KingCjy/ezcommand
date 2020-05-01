@@ -24,7 +24,6 @@ public class CommandParser {
     }
 
     public void initialize() {
-        this.commandTypeDefinitionComposite = commandTypeDefinitionComposite;
 
         String regex = command;
 
@@ -70,7 +69,7 @@ public class CommandParser {
         return matcher.find();
     }
 
-    public <T> T trasform(CommandArgument commandArgument, String name, Class<T> type) {
+    public <T> T trasform(RootCommandArgument commandArgument, String name, Class<T> type) {
         if(commandPattern == null) {
             initialize();
         }
@@ -89,6 +88,6 @@ public class CommandParser {
 
         String value = matcher.group(name).replaceAll("[\\<\\>]", "");
 
-        return commandTypeDefinitionComposite.transform(commandArgument, value, type);
+        return (T) commandTypeDefinitionComposite.transform(commandArgument, value, type);
     }
 }

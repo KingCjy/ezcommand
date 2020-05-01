@@ -1,6 +1,6 @@
 package me.kingcjy.ezcommand.command.handler.support;
 
-import me.kingcjy.ezcommand.EzCommand;
+import me.kingcjy.ezcommand.EzLogger;
 import me.kingcjy.ezcommand.annotations.CommandMapping;
 import me.kingcjy.ezcommand.annotations.Component;
 import me.kingcjy.ezcommand.command.handler.HandlerKey;
@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 @Component
 public class DefaultHandlerMethodCreator implements HandlerMethodCreator {
 
-    private Logger logger = EzCommand.getLogger(DefaultHandlerMethodCreator.class);
+    private Logger logger = EzLogger.getLogger(DefaultHandlerMethodCreator.class);
 
     private final HandlerMethodArgumentResolverComposite handlerMethodArgumentResolverComposite;
     private final CommandTypeDefinitionComposite commandTypeDefinitionComposite;

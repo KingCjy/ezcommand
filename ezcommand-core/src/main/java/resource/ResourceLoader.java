@@ -1,6 +1,6 @@
-package Resource;
+package resource;
 
-import me.kingcjy.ezcommand.EzCommand;
+import me.kingcjy.ezcommand.EzLogger;
 import org.apache.commons.io.IOUtils;
 
 import java.io.IOException;
@@ -35,7 +35,7 @@ public class ResourceLoader {
         InputStream inputStream = getStreamFrom(this.mainClass, filename);
 
         if(inputStream == null) {
-            inputStream = getStreamFrom(EzCommand.class, filename);
+            inputStream = getStreamFrom(EzLogger.class, filename);
         }
 
         try {

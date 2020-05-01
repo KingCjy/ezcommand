@@ -7,6 +7,6 @@ public class TestPlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        new EzApplicationContext(this);
+        new EzCommand(this);
     }
 }

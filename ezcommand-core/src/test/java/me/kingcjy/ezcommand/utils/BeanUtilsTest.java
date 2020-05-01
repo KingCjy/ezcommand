@@ -24,11 +24,11 @@ public class BeanUtilsTest {
 
         BeanDefinitionScanner classPathBeanDefinitionScanner = new ClassPathBeanDefinitionScanner();
         classPathBeanDefinitionScanner.setBeanDefinitionRegistry(defaultBeanFactory);
-        classPathBeanDefinitionScanner.scan("");
+        classPathBeanDefinitionScanner.scan("me.kingcjy.ezcommand");
 
         BeanDefinitionScanner annotationBeanDefinitionScanner = new AnnotationBeanDefinitionScanner();
         annotationBeanDefinitionScanner.setBeanDefinitionRegistry(defaultBeanFactory);
-        annotationBeanDefinitionScanner.scan("");
+        annotationBeanDefinitionScanner.scan("me.kingcjy.ezcommand");
         defaultBeanFactory.initialize();
 
         this.beanFactory = defaultBeanFactory;

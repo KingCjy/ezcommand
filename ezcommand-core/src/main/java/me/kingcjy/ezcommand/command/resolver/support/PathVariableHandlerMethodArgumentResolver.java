@@ -3,8 +3,8 @@ package me.kingcjy.ezcommand.command.resolver.support;
 import me.kingcjy.ezcommand.annotations.CommandMapping;
 import me.kingcjy.ezcommand.annotations.Component;
 import me.kingcjy.ezcommand.annotations.PathVariable;
-import me.kingcjy.ezcommand.command.CommandArgument;
 import me.kingcjy.ezcommand.command.CommandParser;
+import me.kingcjy.ezcommand.command.RootCommandArgument;
 import me.kingcjy.ezcommand.command.definition.CommandTypeDefinitionComposite;
 import me.kingcjy.ezcommand.command.resolver.HandlerMethodArgumentResolver;
 import me.kingcjy.ezcommand.executor.method.MethodParameter;
@@ -29,7 +29,7 @@ public class PathVariableHandlerMethodArgumentResolver implements HandlerMethodA
     }
 
     @Override
-    public Object resolveParameter(CommandArgument commandArgument, MethodParameter parameter) {
+    public Object resolveParameter(RootCommandArgument commandArgument, MethodParameter parameter) {
         PathVariable pathVariable = parameter.getParameterAnnotation(PathVariable.class);
         String command = getMappingCommand(parameter);
 

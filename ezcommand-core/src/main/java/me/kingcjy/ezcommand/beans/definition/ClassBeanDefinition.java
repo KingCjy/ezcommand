@@ -1,6 +1,6 @@
 package me.kingcjy.ezcommand.beans.definition;
 
-import me.kingcjy.ezcommand.EzCommand;
+import me.kingcjy.ezcommand.EzLogger;
 import me.kingcjy.ezcommand.annotations.Inject;
 
 import java.lang.reflect.Constructor;
@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 
 public class ClassBeanDefinition implements BeanDefinition {
 
-    private final static Logger logger = EzCommand.getLogger(ClassBeanDefinition.class);
+    private final static Logger logger = EzLogger.getLogger(ClassBeanDefinition.class);
 
     private Class<?> beanClass;
     private String name;

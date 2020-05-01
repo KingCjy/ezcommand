@@ -1,16 +1,16 @@
 package me.kingcjy.ezcommand.command.definition;
 
-import me.kingcjy.ezcommand.EzCommand;
-import me.kingcjy.ezcommand.command.CommandArgument;
+import me.kingcjy.ezcommand.EzLogger;
+import me.kingcjy.ezcommand.command.RootCommandArgument;
 
 import java.util.HashSet;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class CommandTypeDefinitionComposite {
+public class CommandTypeDefinitionComposite<T extends RootCommandArgument> {
 
-    private static final Logger logger = EzCommand.getLogger(CommandTypeDefinitionComposite.class);
+    private static final Logger logger = EzLogger.getLogger(CommandTypeDefinitionComposite.class);
 
     private Set<CommandTypeDefinition> commandTypeDefinitions = new HashSet<>();
 
@@ -43,7 +43,7 @@ public class CommandTypeDefinitionComposite {
         return commandTypeDefinition.generateRegex(name);
     }
 
-    public <T> T transform(CommandArgument commandArgument, String command, Class<T> type) {
+    public <T2> T2 transform(T commandArgument, String command, Class<T2> type) {
         CommandTypeDefinition commandTypeDefinition = getCommandTypeDefinition(type);
 
         if(commandTypeDefinition == null) {
@@ -51,7 +51,7 @@ public class CommandTypeDefinitionComposite {
             return null;
         }
 
-        return (T) commandTypeDefinition.transform(commandArgument, command);
+        return (T2) commandTypeDefinition.transform(commandArgument, command);
     }
 
     public String getTypeString(Class<?> targetClass) {

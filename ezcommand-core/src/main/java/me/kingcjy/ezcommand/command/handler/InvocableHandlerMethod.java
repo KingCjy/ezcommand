@@ -1,9 +1,10 @@
 package me.kingcjy.ezcommand.command.handler;
 
-import me.kingcjy.ezcommand.command.CommandArgument;
+
+import me.kingcjy.ezcommand.EzLogger;
+import me.kingcjy.ezcommand.command.RootCommandArgument;
 import me.kingcjy.ezcommand.command.resolver.HandlerMethodArgumentResolverComposite;
 import me.kingcjy.ezcommand.executor.method.MethodParameter;
-import org.bukkit.Bukkit;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -12,7 +13,7 @@ import java.util.logging.Logger;
 
 public class InvocableHandlerMethod extends HandlerMethod {
 
-    private static Logger logger = Bukkit.getLogger();
+    private static Logger logger = EzLogger.getLogger(InvocableHandlerMethod.class);
 
     private HandlerMethodArgumentResolverComposite resolvers = new HandlerMethodArgumentResolverComposite();
 
@@ -28,7 +29,7 @@ public class InvocableHandlerMethod extends HandlerMethod {
         this.resolvers = handlerMethodArgumentResolverComposite;
     }
 
-    public Object invoke(CommandArgument commandArgument, Object... providedArguments) {
+    public Object invoke(RootCommandArgument commandArgument, Object... providedArguments) {
         Object[] args = getMethodArgumentValues(commandArgument, providedArguments);
         try {
             return getMethod().invoke(getInstance(), args);
@@ -42,7 +43,7 @@ public class InvocableHandlerMethod extends HandlerMethod {
         }
     }
 
-    private Object[] getMethodArgumentValues(CommandArgument commandArgument, Object...providedArgs) {
+    private Object[] getMethodArgumentValues(RootCommandArgument commandArgument, Object...providedArgs) {
         MethodParameter[] parameters = getMethodParameters();
         Object[] args = new Object[parameters.length];
 

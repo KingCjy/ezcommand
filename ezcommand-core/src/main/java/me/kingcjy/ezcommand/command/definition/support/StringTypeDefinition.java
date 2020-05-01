@@ -1,11 +1,11 @@
 package me.kingcjy.ezcommand.command.definition.support;
 
 import me.kingcjy.ezcommand.annotations.Component;
-import me.kingcjy.ezcommand.command.CommandArgument;
+import me.kingcjy.ezcommand.command.RootCommandArgument;
 import me.kingcjy.ezcommand.command.definition.AbstractCommandTypeDefinition;
 
 @Component
-public class StringTypeDefinition extends AbstractCommandTypeDefinition {
+public class StringTypeDefinition extends AbstractCommandTypeDefinition<RootCommandArgument> {
 
     public static final String PATTERN = "[^\\s]*";
     public static final Class<?> TYPE = String.class;
@@ -16,7 +16,7 @@ public class StringTypeDefinition extends AbstractCommandTypeDefinition {
     }
 
     @Override
-    public Object transform(CommandArgument commandArgument, String command) {
+    public Object transform(RootCommandArgument rootCommandArgument, String command) {
         return command;
     }
 }

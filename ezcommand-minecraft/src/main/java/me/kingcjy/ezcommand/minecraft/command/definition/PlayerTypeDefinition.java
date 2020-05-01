@@ -1,13 +1,14 @@
 package me.kingcjy.ezcommand.minecraft.command.definition;
 
 import me.kingcjy.ezcommand.annotations.Component;
-import me.kingcjy.ezcommand.command.CommandArgument;
+
 import me.kingcjy.ezcommand.command.definition.AbstractCommandTypeDefinition;
+import me.kingcjy.ezcommand.minecraft.command.CommandArgument;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 @Component
-public class PlayerTypeDefinition extends AbstractCommandTypeDefinition {
+public class PlayerTypeDefinition extends MinecraftCommandTypeDefinition {
 
     public static final String PATTERN = "[^\\s]*";
     public static final Class<?> TYPE = Player.class;

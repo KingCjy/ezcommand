@@ -1,6 +1,6 @@
 package me.kingcjy.ezcommand.command.resolver;
 
-import me.kingcjy.ezcommand.command.CommandArgument;
+import me.kingcjy.ezcommand.command.RootCommandArgument;
 import me.kingcjy.ezcommand.executor.method.MethodParameter;
 
 import java.util.*;
@@ -26,7 +26,7 @@ public class HandlerMethodArgumentResolverComposite implements HandlerMethodArgu
     }
 
     @Override
-    public Object resolveParameter(CommandArgument commandArgument, MethodParameter parameter) {
+    public Object resolveParameter(RootCommandArgument commandArgument, MethodParameter parameter) {
         return getArgumentResolver(parameter).resolveParameter(commandArgument, parameter);
     }
 

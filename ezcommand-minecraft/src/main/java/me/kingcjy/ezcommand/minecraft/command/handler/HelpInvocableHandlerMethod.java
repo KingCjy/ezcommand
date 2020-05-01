@@ -1,10 +1,12 @@
 package me.kingcjy.ezcommand.minecraft.command.handler;
 
 import me.kingcjy.ezcommand.annotations.CommandMapping;
+import me.kingcjy.ezcommand.command.RootCommandArgument;
 import me.kingcjy.ezcommand.minecraft.annotations.Description;
 import me.kingcjy.ezcommand.minecraft.annotations.Op;
-import me.kingcjy.ezcommand.command.CommandArgument;
+
 import me.kingcjy.ezcommand.command.handler.InvocableHandlerMethod;
+import me.kingcjy.ezcommand.minecraft.command.CommandArgument;
 import me.kingcjy.ezcommand.utils.TagParser;
 
 import java.lang.reflect.Method;
@@ -26,8 +28,8 @@ public class HelpInvocableHandlerMethod extends InvocableHandlerMethod {
     }
 
     @Override
-    public Object invoke(CommandArgument commandArgument, Object... providedArguments) {
-
+    public Object invoke(RootCommandArgument rootCommandArgument, Object... providedArguments) {
+        CommandArgument commandArgument = (CommandArgument) rootCommandArgument;
         List<String> messages = new ArrayList<>();
 
         messages.add(tagParser.getFromTag("prefix"));

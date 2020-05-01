@@ -1,6 +1,8 @@
 package me.kingcjy.ezcommand.command.definition;
 
-public abstract class AbstractCommandTypeDefinition implements CommandTypeDefinition {
+import me.kingcjy.ezcommand.command.RootCommandArgument;
+
+public abstract class AbstractCommandTypeDefinition<T extends RootCommandArgument> implements CommandTypeDefinition<T> {
 
     private Class<?> type;
     private String typeString;

@@ -2,15 +2,16 @@ package me.kingcjy.ezcommand.minecraft.command.definition;
 
 
 import me.kingcjy.ezcommand.annotations.Component;
-import me.kingcjy.ezcommand.command.CommandArgument;
+
 import me.kingcjy.ezcommand.command.definition.AbstractCommandTypeDefinition;
+import me.kingcjy.ezcommand.minecraft.command.CommandArgument;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
 import java.util.Arrays;
 
 @Component
-public class LocationTypeDefinition extends AbstractCommandTypeDefinition {
+public class LocationTypeDefinition extends MinecraftCommandTypeDefinition {
 
     public final static String PATTERN = "[0-9] [0-9] [0-9]";
 

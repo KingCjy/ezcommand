@@ -1,11 +1,12 @@
 package me.kingcjy.ezcommand.command.definition;
 
-import me.kingcjy.ezcommand.command.CommandArgument;
-import me.kingcjy.ezcommand.command.definition.AbstractCommandTypeDefinition;
-import me.kingcjy.ezcommand.command.definition.CommandTypeDefinitionComposite;
+
+import me.kingcjy.ezcommand.command.RootCommandArgument;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import javax.swing.*;
 
 public class CommandTypeDefinitionCompositeTest {
 
@@ -35,13 +36,13 @@ public class CommandTypeDefinitionCompositeTest {
 
     @Test
     public void 캐스팅_테스트() {
-        CommandArgument commandArgument = new CommandArgument(null, null, null, null, null);
-        Integer number = commandTypeDefinitionComposite.transform(commandArgument, "1", Integer.class);
+        RootCommandArgument rootCommandArgument = new RootCommandArgument();
+        Integer number = (Integer) commandTypeDefinitionComposite.transform(rootCommandArgument, "1", Integer.class);
 
         Assert.assertEquals(number.intValue(), 1);
     }
 
-    private static class TestIntegerTypeDefinition extends AbstractCommandTypeDefinition {
+    private static class TestIntegerTypeDefinition extends AbstractCommandTypeDefinition<RootCommandArgument> {
 
         public static final Class<?> TYPE = Integer.class;
         public static final String TYPE_STRING = "Integer";
@@ -52,7 +53,7 @@ public class CommandTypeDefinitionCompositeTest {
         }
 
         @Override
-        public Object transform(CommandArgument commandArgument, String command) {
+        public Object transform(RootCommandArgument object, String command) {
             return Integer.parseInt(command);
         }
     }

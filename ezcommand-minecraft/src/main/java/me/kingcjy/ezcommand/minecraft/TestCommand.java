@@ -4,7 +4,8 @@ import me.kingcjy.ezcommand.annotations.Command;
 import me.kingcjy.ezcommand.annotations.CommandMapping;
 import me.kingcjy.ezcommand.minecraft.annotations.Description;
 import me.kingcjy.ezcommand.minecraft.annotations.GenerateHelpCommand;
-import me.kingcjy.ezcommand.command.CommandArgument;
+import me.kingcjy.ezcommand.minecraft.command.CommandArgument;
+
 
 @Command
 @CommandMapping("test")

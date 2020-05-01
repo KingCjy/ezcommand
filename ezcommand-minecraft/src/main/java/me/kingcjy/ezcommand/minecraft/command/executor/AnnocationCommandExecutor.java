@@ -1,8 +1,8 @@
-package me.kingcjy.ezcommand.command.executor;
+package me.kingcjy.ezcommand.minecraft.command.executor;
 
-import me.kingcjy.ezcommand.command.CommandArgument;
 import me.kingcjy.ezcommand.command.handler.CommandHandlerMapping;
 import me.kingcjy.ezcommand.command.handler.InvocableHandlerMethod;
+import me.kingcjy.ezcommand.minecraft.command.CommandArgument;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;

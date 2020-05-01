@@ -64,6 +64,10 @@ public class DefaultBeanFactory implements BeanFactory, BeanDefinitionRegistry, 
     @Override
     public BeanFactory initialize() {
         for (BeanDefinition beanDefinition : beanDefinitions) {
+            if(getBean(beanDefinition.getType()) != null) {
+                continue;
+            }
+
             Object beanInstance = beanDefinition.createBeanInstance(this);
             beans.put(beanDefinition.getType().getName(), beanInstance);
         }

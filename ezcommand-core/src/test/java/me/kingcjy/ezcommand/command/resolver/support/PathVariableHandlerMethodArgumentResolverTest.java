@@ -2,7 +2,8 @@ package me.kingcjy.ezcommand.command.resolver.support;
 
 import me.kingcjy.ezcommand.annotations.CommandMapping;
 import me.kingcjy.ezcommand.annotations.PathVariable;
-import me.kingcjy.ezcommand.command.CommandArgument;
+
+import me.kingcjy.ezcommand.command.RootCommandArgument;
 import me.kingcjy.ezcommand.command.definition.CommandTypeDefinitionComposite;
 import me.kingcjy.ezcommand.command.definition.support.StringTypeDefinition;
 import me.kingcjy.ezcommand.command.resolver.support.PathVariableHandlerMethodArgumentResolver;
@@ -33,9 +34,9 @@ public class PathVariableHandlerMethodArgumentResolverTest {
         PathVariableHandlerMethodArgumentResolver pathVariableHandlerMethodArgumentResolver = new PathVariableHandlerMethodArgumentResolver(commandTypeDefinitionComposite);
 
         MethodParameter methodParameter = new MethodParameter(TestCommand.class.getDeclaredMethod("saySomething", String.class), 0);
-        CommandArgument commandArgument = new CommandArgument(null, null, null, null, "/say KingCjy!!!");
+        RootCommandArgument rootCommandArgument = new RootCommandArgument("/say KingCjy!!!");
 
-        String result = (String) pathVariableHandlerMethodArgumentResolver.resolveParameter(commandArgument, methodParameter);
+        String result = (String) pathVariableHandlerMethodArgumentResolver.resolveParameter(rootCommandArgument, methodParameter);
         Assert.assertEquals(result, "KingCjy!!!");
     }
 
