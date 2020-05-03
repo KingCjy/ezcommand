@@ -46,3 +46,4 @@ me/kingcjy/ezcommand/annotations/Command.class
 me/kingcjy/ezcommand/beans/definition/BeanDefinitionRegistry.class
 me/kingcjy/ezcommand/command/definition/AbstractCommandTypeDefinition.class
 me/kingcjy/ezcommand/command/handler/CommandHandlerMapping.class
+me/kingcjy/ezcommand/utils/OrderUtils.class

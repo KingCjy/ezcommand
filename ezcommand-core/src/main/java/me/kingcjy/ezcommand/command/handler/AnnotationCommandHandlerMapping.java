@@ -2,6 +2,7 @@ package me.kingcjy.ezcommand.command.handler;
 
 import me.kingcjy.ezcommand.annotations.Command;
 import me.kingcjy.ezcommand.beans.factory.BeanFactory;
+import me.kingcjy.ezcommand.command.exception.CommandNotFoundException;
 import me.kingcjy.ezcommand.utils.BeanUtils;
 
 import java.util.HashMap;
@@ -33,7 +34,7 @@ public class AnnotationCommandHandlerMapping implements CommandHandlerMapping {
     public InvocableHandlerMethod getHandler(String command) {
         HandlerKey handlerKey = handlers.keySet().stream()
                 .filter(key -> key.matches(command))
-                .findAny().get();
+                .findAny().orElseThrow(() -> new CommandNotFoundException(command));
 
         return handlers.get(handlerKey);
     }

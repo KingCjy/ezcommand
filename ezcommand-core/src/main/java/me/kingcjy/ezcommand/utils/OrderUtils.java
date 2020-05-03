@@ -1,6 +1,18 @@
 package me.kingcjy.ezcommand.utils;
 
+import me.kingcjy.ezcommand.annotations.Order;
+
 public class OrderUtils {
 
-//    내일 하자 ! Order priority, BeanDefinition 우선 순위
+    public static Integer getOrder(Class<?> type) {
+        Order order = type.getDeclaredAnnotation(Order.class);
+
+        if(order == null) {
+            return 1;
+        }
+
+        return order.value();
+    }
 }
+
+

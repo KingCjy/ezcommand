@@ -1,6 +1,7 @@
 package me.kingcjy.ezcommand.command.definition;
 
 import me.kingcjy.ezcommand.EzLogger;
+import me.kingcjy.ezcommand.annotations.Component;
 import me.kingcjy.ezcommand.command.RootCommandArgument;
 
 import java.util.HashSet;
@@ -8,6 +9,7 @@ import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+@Component
 public class CommandTypeDefinitionComposite<T extends RootCommandArgument> {
 
     private static final Logger logger = EzLogger.getLogger(CommandTypeDefinitionComposite.class);
