@@ -42,8 +42,11 @@ me/kingcjy/ezcommand/utils/BeanUtils.class
 me/kingcjy/ezcommand/command/resolver/HandlerMethodArgumentResolverComposite.class
 me/kingcjy/ezcommand/utils/TagParser.class
 me/kingcjy/ezcommand/annotations/Component.class
+me/kingcjy/ezcommand/exception/CommandAdviceBean.class
 me/kingcjy/ezcommand/annotations/Command.class
+me/kingcjy/ezcommand/command/exception/CommandNotFoundException.class
 me/kingcjy/ezcommand/beans/definition/BeanDefinitionRegistry.class
 me/kingcjy/ezcommand/command/definition/AbstractCommandTypeDefinition.class
+me/kingcjy/ezcommand/utils/OrderUtils$OrderClass.class
 me/kingcjy/ezcommand/command/handler/CommandHandlerMapping.class
 me/kingcjy/ezcommand/utils/OrderUtils.class

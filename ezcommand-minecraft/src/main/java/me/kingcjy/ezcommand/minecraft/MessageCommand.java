@@ -16,6 +16,7 @@ public class MessageCommand {
     @CommandMapping("one <Player:player> <message>")
     public void messageToPlayer(@PathVariable Player player, @PathVariable String message) {
         player.sendMessage(message);
+        throw new RuntimeException("asdbkajsbdkasd");
     }
 
     @Op

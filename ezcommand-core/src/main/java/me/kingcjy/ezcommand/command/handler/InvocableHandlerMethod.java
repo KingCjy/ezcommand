@@ -34,11 +34,11 @@ public class InvocableHandlerMethod extends HandlerMethod {
         try {
             return getMethod().invoke(getInstance(), args);
         } catch (IllegalAccessException e) {
-            logger.log(Level.SEVERE, "[EzCommand] " + e.getMessage(), e);
+//            logger.log(Level.SEVERE, "[EzCommand] " + e.getMessage(), e);
             throw new RuntimeException(e);
         } catch (InvocationTargetException e) {
             Throwable targetException = e.getTargetException();
-            logger.log(Level.SEVERE, "[EzCommand] " + targetException.getMessage(), targetException);
+//            logger.log(Level.SEVERE, "[EzCommand] " + targetException.getMessage(), targetException);
             throw new RuntimeException(targetException);
         }
     }

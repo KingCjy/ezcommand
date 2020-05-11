@@ -1,5 +1,7 @@
 package me.kingcjy.ezcommand.minecraft;
 
+import me.kingcjy.ezcommand.annotations.CommandAdvice;
+import me.kingcjy.ezcommand.exception.CommandAdviceBean;
 import me.kingcjy.ezcommand.minecraft.command.executor.AnnocationCommandExecutor;
 import me.kingcjy.ezcommand.command.handler.AnnotationCommandHandlerMapping;
 import me.kingcjy.ezcommand.minecraft.command.registry.AnnotationCommandRegistry;
@@ -16,7 +18,10 @@ public class EzCommand extends EzApplicationContext {
 
     @Override
     public void registerCommand(AnnotationCommandHandlerMapping annotationCommandHandlerMapping) {
-        AnnocationCommandExecutor annocationCommandExecutor = new AnnocationCommandExecutor(annotationCommandHandlerMapping);
+
+        CommandAdviceBean commandAdviceBean = this.beanFactory.getBean(CommandAdviceBean.class);
+
+        AnnocationCommandExecutor annocationCommandExecutor = new AnnocationCommandExecutor(commandAdviceBean, annotationCommandHandlerMapping);
         AnnotationCommandRegistry annotationCommandRegistry = new AnnotationCommandRegistry((JavaPlugin) mainClass, annocationCommandExecutor, annotationCommandHandlerMapping);
         annotationCommandRegistry.registerCommands();
     }

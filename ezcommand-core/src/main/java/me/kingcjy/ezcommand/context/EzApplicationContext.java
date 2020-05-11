@@ -1,5 +1,8 @@
 package me.kingcjy.ezcommand.context;
 
+import me.kingcjy.ezcommand.annotations.CommandAdvice;
+import me.kingcjy.ezcommand.exception.CommandAdviceBean;
+import me.kingcjy.ezcommand.utils.OrderUtils;
 import resource.ResourceLoader;
 import me.kingcjy.ezcommand.beans.factory.BeanFactory;
 import me.kingcjy.ezcommand.beans.factory.DefaultBeanFactory;
@@ -21,11 +24,11 @@ import java.util.stream.Collectors;
 
 public abstract class EzApplicationContext implements ApplicationContext {
 
-    protected String serverName;
-    protected String serverVersion;
-    protected LocalDateTime startDateTime;
+    protected String serverName = "";
+    protected String serverVersion  = "";
+    protected LocalDateTime startDateTime = LocalDateTime.now();
 
-    private BeanFactory beanFactory;
+    protected BeanFactory beanFactory;
 
     protected Object mainClass;
 
@@ -58,6 +61,12 @@ public abstract class EzApplicationContext implements ApplicationContext {
         HandlerMethodArgumentResolverComposite handlerMethodArgumentResolverComposite = this.beanFactory.getBean(HandlerMethodArgumentResolverComposite.class);
         handlerMethodArgumentResolverComposite.addResolver(handlerMethodArgumentResolvers);
 
+        CommandAdviceBean commandAdviceBean = beanFactory.getBean(CommandAdviceBean.class);
+
+        Set<Object> advices = BeanUtils.findAnnotatedBean(beanFactory, CommandAdvice.class);
+        Object object = OrderUtils.getHighest(advices);
+        commandAdviceBean.setControllerAdvice(object);
+
         HandlerMethodCreator handlerMethodCreator = new HandlerMethodCreatorComposite(beanFactory);
 
         AnnotationCommandHandlerMapping annotationCommandHandlerMapping = new AnnotationCommandHandlerMapping(beanFactory, handlerMethodCreator);
@@ -69,12 +78,12 @@ public abstract class EzApplicationContext implements ApplicationContext {
 
     @Override
     public String getServerName() {
-        return "Ezframework";
+        return this.serverName;
     }
 
     @Override
     public String getServerVersion() {
-        return "0.0.1";
+        return this.serverVersion;
     }
 
     @Override

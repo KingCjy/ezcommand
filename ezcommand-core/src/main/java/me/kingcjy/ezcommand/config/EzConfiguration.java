@@ -18,4 +18,5 @@ public class EzConfiguration {
     public HandlerMethodArgumentResolverComposite handlerMethodArgumentResolverComposite() {
         return new HandlerMethodArgumentResolverComposite();
     }
+
 }

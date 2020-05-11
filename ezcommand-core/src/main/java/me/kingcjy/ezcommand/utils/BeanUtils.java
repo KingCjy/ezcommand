@@ -4,6 +4,7 @@ import me.kingcjy.ezcommand.beans.factory.BeanFactory;
 
 import java.lang.annotation.Annotation;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class BeanUtils {
@@ -29,7 +30,7 @@ public class BeanUtils {
     }
 
     public static Set<Object> findAnnotatedBean(BeanFactory beanFactory, Class<? extends Annotation> targetAnnotation) {
-        Set<Object> result = new HashSet<>();
+        Set<Object> result = new LinkedHashSet<>();
 
         for (Object bean : beanFactory.getBeans()) {
             if(bean.getClass().getAnnotation(targetAnnotation) != null) {

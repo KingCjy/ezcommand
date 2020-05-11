@@ -15,4 +15,11 @@ public class RootCommandArgument {
     public void setFullCommand(String fullCommand) {
         this.fullCommand = fullCommand;
     }
+
+    @Override
+    public String toString() {
+        return "RootCommandArgument{" +
+                "fullCommand='" + fullCommand + '\'' +
+                '}';
+    }
 }

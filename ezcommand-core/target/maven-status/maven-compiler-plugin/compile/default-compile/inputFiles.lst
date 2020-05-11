@@ -7,6 +7,7 @@
 /Users/kingcjy/git/ezcommand/ezcommand-core/src/main/java/me/kingcjy/ezcommand/annotations/Command.java
 /Users/kingcjy/git/ezcommand/ezcommand-core/src/main/java/me/kingcjy/ezcommand/annotations/Bean.java
 /Users/kingcjy/git/ezcommand/ezcommand-core/src/main/java/me/kingcjy/ezcommand/command/resolver/HandlerMethodArgumentResolver.java
+/Users/kingcjy/git/ezcommand/ezcommand-core/src/main/java/me/kingcjy/ezcommand/exception/CommandAdviceBean.java
 /Users/kingcjy/git/ezcommand/ezcommand-core/src/main/java/me/kingcjy/ezcommand/beans/scanner/AnnotationBeanDefinitionScanner.java
 /Users/kingcjy/git/ezcommand/ezcommand-core/src/main/java/me/kingcjy/ezcommand/annotations/Order.java
 /Users/kingcjy/git/ezcommand/ezcommand-core/src/main/java/me/kingcjy/ezcommand/executor/method/MethodParameter.java
@@ -24,6 +25,7 @@
 /Users/kingcjy/git/ezcommand/ezcommand-core/src/main/java/me/kingcjy/ezcommand/config/EzConfiguration.java
 /Users/kingcjy/git/ezcommand/ezcommand-core/src/main/java/me/kingcjy/ezcommand/command/definition/CommandTypeDefinition.java
 /Users/kingcjy/git/ezcommand/ezcommand-core/src/main/java/me/kingcjy/ezcommand/beans/scanner/ClassPathBeanDefinitionScanner.java
+/Users/kingcjy/git/ezcommand/ezcommand-core/src/main/java/me/kingcjy/ezcommand/command/exception/CommandNotFoundException.java
 /Users/kingcjy/git/ezcommand/ezcommand-core/src/main/java/me/kingcjy/ezcommand/exception/DefaultCommandAdvice.java
 /Users/kingcjy/git/ezcommand/ezcommand-core/src/main/java/me/kingcjy/ezcommand/annotations/Inject.java
 /Users/kingcjy/git/ezcommand/ezcommand-core/src/main/java/me/kingcjy/ezcommand/annotations/Component.java

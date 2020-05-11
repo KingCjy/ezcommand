@@ -4,6 +4,8 @@ import me.kingcjy.ezcommand.command.RootCommandArgument;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 
+import java.util.Arrays;
+
 public class CommandArgument extends RootCommandArgument {
     private CommandSender commandSender;
     private Command command;
@@ -52,5 +54,15 @@ public class CommandArgument extends RootCommandArgument {
 
     public String getFullCommand() {
         return fullCommand;
+    }
+
+    @Override
+    public String toString() {
+        return "CommandArgument{" +
+                "commandSender=" + commandSender +
+                ", command=" + command +
+                ", label='" + label + '\'' +
+                ", args=" + Arrays.toString(args) +
+                '}';
     }
 }
